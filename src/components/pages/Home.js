@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import SpotifyButton from '../SpotifyButton';
 
-import Playlist from './components/Playlist';
-
+import Playlist from '../Playlist';
 
 const Home = () => {
     let [searchParams,] = useSearchParams();

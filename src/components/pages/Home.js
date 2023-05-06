@@ -18,10 +18,16 @@ const Home = () => {
             }
             const response = await fetch(`http://127.0.0.1:8000/api/playlists?code=${searchParams.get("code")}&state=${searchParams.get("state")}&platform=spotify&redirect_uri=http://192.168.1.107:3000`);
             const data = await response.json();
-            if (response.ok) { setPlaylists(data.playlists); }
+            if (response.ok) {
+                setPlaylists(data.playlists);
+            }
         }
         getPlaylists();
     }, [searchParams]);
+
+    if (playlists.length > 0) {
+        console.log("playlists", playlists);
+    }
 
     return (
         <div>
